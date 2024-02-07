@@ -1,0 +1,82 @@
+[
+  {
+    "user": "logan",
+    "message": "Hola alguien conectado?",
+    "createdAt": {
+      "$date": "2024-01-16T22:53:09.074Z"
+    },
+    "updatedAt": {
+      "$date": "2024-01-16T22:53:09.074Z"
+    }
+  },
+  {
+    "user": "Cinty",
+    "message": "Hola yo estoy",
+    "createdAt": {
+      "$date": "2024-01-16T22:53:33.201Z"
+    },
+    "updatedAt": {
+      "$date": "2024-01-16T22:53:33.201Z"
+    }
+  },
+  {
+    "user": "logan",
+    "message": "Genial se ve una vez el mensaje",
+    "createdAt": {
+      "$date": "2024-01-16T22:53:44.520Z"
+    },
+    "updatedAt": {
+      "$date": "2024-01-16T22:53:44.520Z"
+    }
+  },
+  {
+    "user": "Cinty",
+    "message": "Si se ve perfecto",
+    "createdAt": {
+      "$date": "2024-01-16T22:53:52.265Z"
+    },
+    "updatedAt": {
+      "$date": "2024-01-16T22:53:52.265Z"
+    }
+  },
+  {
+    "user": "Juan",
+    "message": "Hola cinty",
+    "createdAt": {
+      "$date": "2024-01-16T23:00:17.865Z"
+    },
+    "updatedAt": {
+      "$date": "2024-01-16T23:00:17.865Z"
+    }
+  },
+  {
+    "user": "cinty",
+    "message": "Hola Juan (cambio io)",
+    "createdAt": {
+      "$date": "2024-01-16T23:00:54.395Z"
+    },
+    "updatedAt": {
+      "$date": "2024-01-16T23:00:54.395Z"
+    }
+  },
+  {
+    "user": "Juan",
+    "message": "Se sigue viendo bien",
+    "createdAt": {
+      "$date": "2024-01-16T23:01:04.112Z"
+    },
+    "updatedAt": {
+      "$date": "2024-01-16T23:01:04.112Z"
+    }
+  },
+  {
+    "user": "cinty",
+    "message": "perfecto",
+    "createdAt": {
+      "$date": "2024-01-16T23:01:11.379Z"
+    },
+    "updatedAt": {
+      "$date": "2024-01-16T23:01:11.379Z"
+    }
+  }
+]

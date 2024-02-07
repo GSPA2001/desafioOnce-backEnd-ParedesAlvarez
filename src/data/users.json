@@ -1,0 +1,94 @@
+[
+  {
+    "first_name": "Juan",
+    "last_name": "Apellido",
+    "email": "j@example.com",
+    "age": 23,
+    "password": "contraseña",
+    "rol": "ADMIN"
+  },
+  {
+    "first_name": "Coder",
+    "last_name": "House",
+    "email": "adminCoder@coder.com",
+    "age": 18,
+    "password": "educacion",
+    "cart":"65ac0467027a768c3aee1019",
+    "rol": "ADMIN"
+  },
+  {
+    "first_name": "Dr. House",
+    "last_name": "Digital",
+    "email": "digitalhouse@example.com",
+    "age": 22,
+    "password": "contraseña",
+    "rol": "user"
+  },
+  {
+    "first_name": "Marta",
+    "last_name": "Apellido",
+    "email": "m@example.com",
+    "age": 23,
+    "password": "contraseña",
+    "rol": "user"
+  },
+  {
+    "_id": {
+      "$oid": "65a721bc6d1af3a1361a1753"
+    },
+    "first_name": "Orly",
+    "last_name": "Restall",
+    "email": "orestall0@multiply.com",
+    "age": 19,
+    "password": "contraseña",
+    "rol": "",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65a721e66d1af3a1361a1758"
+    },
+    "first_name": "Federico",
+    "last_name": "Hulstrom",
+    "email": "fhulstrom3@dion.ne.jp",
+    "age": 39,
+    "password": "contraseña",
+    "rol": "",
+    "__v": 0
+  },
+  {
+    "first_name": "Richmound",
+    "last_name": "Dannohl",
+    "email": "rdannohl4@myspace.com",
+    "age": 19,
+    "password": "contraseña",
+    "rol": "user"
+  },
+  {
+    "first_name": "Arne",
+    "last_name": "Alwen",
+    "email": "aalwen5@wix.com",
+    "age": 34,
+    "password": "contraseña",
+    "rol": "user"
+  },
+  {
+    "_id": {
+      "$oid": "65a722b36d1af3a1361a1767"
+    },
+    "first_name": "Dot",
+    "last_name": "Durning",
+    "email": "ddurning6@adobe.com",
+    "age": 23,
+    "password": "contraseña",
+    "rol": "user"
+  },
+  {
+    "first_name": "Frieda",
+    "last_name": "Pitchers",
+    "email": "fpitchers7@jiathis.com",
+    "age": 64,
+    "password": "contraseña",
+    "rol": "user"
+  }
+]

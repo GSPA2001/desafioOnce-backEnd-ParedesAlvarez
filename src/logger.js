@@ -1,12 +1,13 @@
 import winston from "winston";
+import chalk from "chalk"; // Importa chalk para agregar colores
 import config from "./config.js";
 import { __dirname } from "./utils.js";
 
-// Define the level system
+// Define el sistema de niveles
 const levels = {
   fatal: 0,
   error: 1,
-  warn: 2,
+  warning: 2,
   info: 3,
   http: 4,
   debug: 5,
@@ -15,7 +16,7 @@ const levels = {
 const levelNames = [
   "fatal",
   "error",
-  "warn",
+  "warning",
   "info",
   "http",
   "debug",
@@ -25,7 +26,7 @@ const getLevel = (level) => {
   return levels[level] || 5; //default
 };
 
-// Crea loggers
+// Crea los loggers
 const devLogger = winston.createLogger({
   level: "debug",
   levels,
@@ -35,7 +36,18 @@ const devLogger = winston.createLogger({
       format: winston.format.combine(
         winston.format.label({ label: "development" }),
         winston.format.printf(({ level, message, label }) => {
-          return `${label} [${levelNames[getLevel(level)]}] ${message}`;
+          // Usa chalk para agregar colores a los mensajes según el nivel
+          let colorizedMessage = message;
+          if (level === "error") {
+            colorizedMessage = chalk.red(message);
+          } else if (level === "warning") {
+            colorizedMessage = chalk.yellow(message);
+          } else if (level === "info") {
+            colorizedMessage = chalk.green(message);
+          } else if (level === "debug") {
+            colorizedMessage = chalk.blue(message);
+          }
+          return `${label} [${levelNames[getLevel(level)]}] ${colorizedMessage}`;
         })
       ),
     }),
@@ -51,7 +63,18 @@ const prodLogger = winston.createLogger({
       format: winston.format.combine(
         winston.format.label({ label: "production" }),
         winston.format.printf(({ level, message, label }) => {
-          return `${label} [${levelNames[getLevel(level)]}] ${message}`;
+          // Usa chalk para agregar colores a los mensajes según el nivel
+          let colorizedMessage = message;
+          if (level === "error") {
+            colorizedMessage = chalk.red(message);
+          } else if (level === "warning") {
+            colorizedMessage = chalk.yellow(message);
+          } else if (level === "info") {
+            colorizedMessage = chalk.green(message);
+          } else if (level === "debug") {
+            colorizedMessage = chalk.blue(message);
+          }
+          return `${label} [${levelNames[getLevel(level)]}] ${colorizedMessage}`;
         })
       ),
     }),

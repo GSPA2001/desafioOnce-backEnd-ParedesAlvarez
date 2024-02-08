@@ -70,12 +70,12 @@ app.use(express.static(__dirname + '/public'))
 //loggerTest endpoint para probar middleware de logger
 app.use(addLogger);
 app.get("/loggerTest", (req, res) => {
-  req.logger.debug("This is a debug log");
-  req.logger.http("This is an http log");
-  req.logger.info("This is an info log");
-  req.logger.warn("This is a warn log");
-  req.logger.error("This is an error log");
-  req.logger.fatal("This is a fatal log");
+  req.logger.debug("This is a debug 🛠️ log");
+  req.logger.http("This is an http 🎯 log");
+  req.logger.info("This is an info ℹ️ log");
+  req.logger.warning("This is a warning 🚫 log");
+  req.logger.error("This is an error ❌ log");
+  req.logger.fatal("This is a fatal 🆘 log");
   res.send("🚀Logged all levels");
 });
 

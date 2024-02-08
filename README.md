@@ -12,6 +12,7 @@ Instalación:
 * npm init -y (e instalación de nodemon)
 * npm install @faker-js/faker
 * npm install bcrypt
+* npm install chalk (para color en logger porque no me funciono colorize())
 * npm install commander
 * npm install connect-mongo
 * npm install cookie-parser

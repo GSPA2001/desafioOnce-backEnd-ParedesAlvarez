@@ -4,12 +4,14 @@ import { UserController } from "../controllers/user.controller.js";
 import productModel from "../models/product.model.js";
 import messageModel from "../models/messages.model.js";
 import errorsDictionary from '../dao/error.dictionary.js';
+import { catcher } from "../utils.js";
 
 const router = Router();
 const controller = new ProductController();
 const userController = new UserController();
 
-router.get("/", async (req, res) => {
+router.get("/", catcher(async (req, res) => {
+  res.logger.warning('Buscando productos .🔎..');
   try {
     const allProducts = await productModel.find().lean().exec();
     console.log(allProducts.map((item) => item._id));
@@ -18,7 +20,7 @@ router.get("/", async (req, res) => {
     console.error("Error:", err);
     res.status(errorsDictionary.PRODUCT_MODEL_FIND_ERROR.code).json({ status: "error", error: errorsDictionary.PRODUCT_MODEL_FIND_ERROR.message });
   }
-});
+}));
 
 // Dejamos esta ruta como PUBLICA, cualquier usuario logueado puede verla
 router.get("/products", async (req, res) => {
@@ -122,6 +124,7 @@ router.get("/register", async (req, res) => {
 
 // Ruta para la página de chat
 router.get("/chat", async (req, res) => {
+  res.logger.info('Accediendo a la página de chat 💬..');
   try {
     // Verifica si hay un usuario logueado
     if (req.user) {
@@ -140,6 +143,7 @@ router.get("/chat", async (req, res) => {
 
 // Rutas get, post, delete para la página de productos en tiempo real
 router.get("/realTimeProducts", async (req, res) => {
+  res.logger.info('Accediendo a la página de productos en tiempo real ⏱️..');
   try {
     // Verificar si el usuario está logueado y tiene el rol de administrador
     if (req.user && req.user.rol === 'ADMIN') {
@@ -159,6 +163,7 @@ router.post("/api/products", async (req, res) => {
   const { title, description, price, thumbnail, code, category, stock } = req.body;
   const newProduct = new productModel({ title, description, price, thumbnail, code, category, stock });
   await newProduct.save();
+  res.logger.debug(`Nuevo producto creado: ${newProduct.title}`);
   res.json(newProduct);
 });
 //para ver el producto eliminado refrescar pagina 
@@ -170,6 +175,7 @@ router.delete("/api/products/:id", async (req, res) => {
     await productModel.findByIdAndDelete(productId);
 
     // Enviar una respuesta de éxito
+    res.logger.debug(`Producto eliminado con id ${productId}`);
     res.json({ status: "success", message: "Producto eliminado" });
   } catch (error) {
     console.error(error);

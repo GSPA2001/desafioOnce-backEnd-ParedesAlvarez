@@ -5,6 +5,13 @@ import passport from "passport";
 import nodemailer from "nodemailer";
 import config from "./config.js";
 
+// Agrego catcher function here
+export const catcher = (fn) => {
+  return (req, res, next) => {
+    fn(req, res).catch(err => next(err));
+  };
+}
+
 const mailerService = nodemailer.createTransport({
   service: "gmail",
   port: 587,
